@@ -24,7 +24,7 @@ func TestMain(m *testing.M) {
 
 	application.CreateTableIfNotExists()
 	statusCode := m.Run()
-	//application.ResetTable()
+	application.ResetTable()
 	os.Exit(statusCode)
 }
 
