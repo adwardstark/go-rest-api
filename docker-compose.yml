@@ -1,0 +1,15 @@
+version: "3"
+services:
+  db:
+    image: "postgres:13"
+    container_name: "go_postgres"
+    environment:
+      POSTGRES_PASSWORD: "pq_password"
+    ports:
+      - "5432:5432"
+    volumes:
+      - pq_dbdata:/var/lib/postgresql/data
+volumes:
+  pq_dbdata:
+    driver: local
+    name: pq_dbdata
