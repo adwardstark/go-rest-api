@@ -1,0 +1,20 @@
+name: Ci Test
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Init db
+        run: |
+          ./run.sh startdb
+          ./run.sh initdb products_db
+
+      - name: Running tests
+        run: |
+          go test ./app/
+
+      - name: Cleaning
+        run: |
+          ./run.sh stopdb
+          ./run.sh cleanup
