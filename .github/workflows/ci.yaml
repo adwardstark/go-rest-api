@@ -8,6 +8,7 @@ jobs:
       - name: Init db
         run: |
           ./run.sh startdb
+          sleep 6
           ./run.sh initdb products_db
 
       - name: Running tests
