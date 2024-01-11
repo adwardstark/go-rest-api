@@ -20,7 +20,7 @@ dblogs() {
 initdb() {
     if [[ -n "$1" ]]; then
         echo "Initializing database with name: $1"
-        docker exec -it go_postgres psql -U postgres -c "create database $1" # db-name
+        docker exec -i go_postgres psql -U postgres -c "create database $1" # db-name
     else
         echo "No database name provided, use initdb <database-name>"
     fi
