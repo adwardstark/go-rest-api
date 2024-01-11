@@ -2,7 +2,7 @@
 
 startdb() {
     echo "Starting postgres database"
-    docker-compose up -d
+    docker compose up -d
     echo "Started."
 }
 

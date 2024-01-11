@@ -31,6 +31,7 @@ func (app *RESTApp) Initialize(user, password, dbname string) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	app.CreateTableIfNotExists()
 
 	app.Router = mux.NewRouter()
 	app.initializeRoutes()
